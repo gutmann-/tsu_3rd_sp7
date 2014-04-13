@@ -29,7 +29,7 @@ public class W2and3IntegerMultisetTest {
             int n = e.getKey();
             int q = e.getValue();
 
-            while (--q > 0) multiset.add(n);
+            while (--q >= 0) multiset.add(n);
         }
     }
 
@@ -43,7 +43,7 @@ public class W2and3IntegerMultisetTest {
             int n = e.getKey();
             int q = e.getValue();
 
-            while (--q > 0) {
+            while (--q >= 0) {
                 assertTrue(multiset.contains(n));
                 boolean elementWasExisted = multiset.pop(n);
                 assertTrue(elementWasExisted);
