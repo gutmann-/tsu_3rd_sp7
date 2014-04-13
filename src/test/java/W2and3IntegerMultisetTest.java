@@ -10,16 +10,14 @@ public class W2and3IntegerMultisetTest {
     private static final int NUM_OF_ELEMENTS = 1024;
     private static final int MAX_QUANTITY = 11;
 
-    private static final Map<Integer, Integer> makeRandomNumsWithQuantities() {
+    private static Map<Integer, Integer> makeRandomNumsWithQuantities() {
         Map<Integer, Integer> r = new HashMap<>();
         Random random = new Random();
 
         while (r.size() < NUM_OF_ELEMENTS) {
             int n = random.nextInt();
             if (!r.containsKey(n)) {
-                int q = 0;
-                while ((q = random.nextInt(MAX_QUANTITY)) != 0); // warning! tricky (may be) code
-                r.put(n, q);
+                r.put(n, random.nextInt(MAX_QUANTITY) + 1); // +1 to never get 0
             }
         }
 
